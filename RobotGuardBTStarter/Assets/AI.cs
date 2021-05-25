@@ -144,7 +144,20 @@ public class AI : MonoBehaviour
             return false;                                                          //retorna false
 
     }
-    
-   
+
+    [Task]
+    public bool IsHealthLessThan(float health)             //comparação de hp
+    {
+        return this.health < health;                       //retorna gerando outras funções
+    }
+
+    [Task]                                
+    public bool Explode()                  //Destroi o oponente.
+    {
+        Destroy(healthBar.gameObject);     //destroi barra de hp
+        Destroy(this.gameObject);          //destroi player
+        return true;                       //retorna true
+    }
+
 }
 
